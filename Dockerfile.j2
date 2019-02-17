@@ -1,0 +1,12 @@
+FROM postgres:{{ pg_version }}
+
+LABEL description="Custom PG"
+LABEL version="{{ version }}"
+
+# Setting Environment Variables
+ENV POSTGRES_DB "{{ pg_database }}"
+ENV POSTGRES_USER "{{ pg_user }}"
+ENV POSTGRES_PASSWORD "{{ pg_password }}"
+
+# Setting Volumes
+VOLUME pgdata
